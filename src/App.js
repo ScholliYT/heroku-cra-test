@@ -1,22 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 
 function App() {
+  const [getMessage, setGetMessage] = useState({})
+
+  useEffect(()=>{
+    axios.get('/time').then(response => {
+      console.log("API request SUCCESS", response)
+      setGetMessage(response)
+    }).catch(error => {
+      console.log(error)
+    })
+
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is the Heroku-cra-test app!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Heroku-cra-test with flask api</p>
+        <div>{getMessage.status === 200 ? 
+          <h3>API time: {getMessage.data.time}</h3>
+          :
+          <h3>LOADING</h3>}</div>
       </header>
     </div>
   );
