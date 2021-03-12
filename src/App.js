@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Heroku-cra-test with flask api</p>
+        <p><a href="https://github.com/ScholliYT/heroku-cra-test">Heroku-cra-test</a> with flask api</p>
         <div>{getMessage.status === 200 ? 
           <h3>API time: {getMessage.data.time}</h3>
           :
