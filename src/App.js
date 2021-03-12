@@ -7,6 +7,7 @@ function App() {
   const [getMessage, setGetMessage] = useState({})
 
   useEffect(()=>{
+    console.log("Calling", process.env.REACT_APP_APIURL + '/time')
     axios.get(process.env.REACT_APP_APIURL + '/time').then(response => {
       console.log("API request SUCCESS", response)
       setGetMessage(response)
