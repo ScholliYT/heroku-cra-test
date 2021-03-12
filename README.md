@@ -4,6 +4,12 @@ The app is deployed with two heroku apps.
 Frontend: [Heroku-link](https://heroku-cra-test.herokuapp.com/)  
 Backend: [Heroku-link](https://heroku-cra-test-backend.herokuapp.com/time)  
 
+## Heroku
+I just created two apps on heroku and configured them as follows.  
+For the Fronted I used the [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack) as the only buildpack.  
+For the Backend I used [Heroku Multi Procfile buildpack](https://github.com/heroku/heroku-buildpack-multi-procfile) together with the normal Heroku python Buildpack. Additionally, I configured a Config Var to point the the Procfile in the `/api` directory (It can't be top level because Heroku infers Node.js start commands automatically).
+![Heroku Backend configuration](https://i.imgur.com/O2Ma1we.png)
+
 ## Frontend
 ### `npm start`
 
@@ -36,3 +42,4 @@ You can now run the backend server locally at [http://localhost:5000](http://loc
 ```
 flask run
 ```
+
