@@ -24,7 +24,7 @@ function App() {
         <div>{getMessage.status === 200 ? 
           <h3>API time: {getMessage.data.time}</h3>
           :
-          <h3>LOADING</h3>}</div>
+          <h3>LOADING API call</h3>}</div>
       </header>
     </div>
   );
