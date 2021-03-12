@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 import time
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app) # enable cors for all origins
 
 @app.route('/time')
 def get_current_time():
